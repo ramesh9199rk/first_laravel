@@ -14,20 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::get('/demo/{name}/{id?}',function($name,$id=null){
-   // echo "hello world!";
-   //return view('demo');
-//    echo $name ." ";
-//    echo $id;
-$data =compact('name','id');
-//print_r($data);
-return view ('welcome')->with($data);
+Route::get('/about', function () {
+    return view('about');
 });
-// Route :: post('/test',function(){
-// echo "hello post method!";
+
+// Route::get('/demo/{name?}/{id?}',function($name,$id=null){
+//    // echo "hello world!";
+//    //return view('demo');
+// //    echo $name ." ";
+// //    echo $id;
+// $data =compact('name','id');
+// //print_r($data);
+// return view ('welcome')->with($data);
 // });
-Route:: any('/test',function(){
-    echo "This is a test!";
-});
+// // Route :: post('/test',function(){
+// // echo "hello post method!";
+// // });
+// Route:: any('/test',function(){
+//     echo "This is a test!";
+// });
