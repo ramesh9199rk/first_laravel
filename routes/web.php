@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+// Route::get('/about', function () {
+//     return view('about');
+// });
 
 // Route::get('/demo/{name?}/{id?}',function($name,$id=null){
 //    // echo "hello world!";
@@ -35,3 +36,10 @@ Route::get('/about', function () {
 // Route:: any('/test',function(){
 //     echo "This is a test!";
 // });
+
+Route::get('/register',[RegistrationController::class,'index']);
+Route::post('register',[RegistrationController::class,'register']);
+Route::get('/dyregister',[RegistrationController::class,'index']);
+Route::post('dyregister',[RegistrationController::class,'dyregister']);
+Route::get('/student/detail',[RegistrationController::class,'detail']);
+//Route::post('/student/detail',[RegistrationController::class,'detail']);
